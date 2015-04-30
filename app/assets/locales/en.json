@@ -1,0 +1,18 @@
+{
+  'menuCollection': 'Collection',
+  'menuShop': 'Shop',
+  'menuDesigner': 'Designer',
+  'menuStylism': 'Styling Work',
+  'menuContact': 'Contact',
+  'homeTitle': 'is the perfect complement for contemporary women.',
+  'aboutTitle1': 'About Siqueiros',
+  'aboutTitle2': 'Siqueiros y Responsabilidad Social',
+  'aboutText1': '<span>S</span><p>iqueiros is the perfect complement for contemporary women. Those who walk selfconfident with big challenges and ambition. And, in an urban ambience recognize the value of a healthy life. Cult women and consious of society, making their path to success and doesnt belive in limits. For them, Siqueiros offers colections both smart and contemporary that make your daily life easy and pleasent. Merging aesthetics and the last fashion trends in your day.</p>',
+  'aboutText2': '<span>I</span><p>n our company, we are conscious of the natural and social enviorment. Thats why we practice social enterprise responsability. For example, every chemical process done by the brand is done with natural elements and doesn’t leave any residual materials. We also have the goal of executing a zero waste production. To achieve that, all the residual fabric is used to make pillows that are donated to the Orphane Center of San Jose, Costa Rica. Support us and jo in the cause!</p>',
+  'contactTitle': 'Send Us Your',
+  'contactSubtitle': 'Q U E S T I O N S',
+  'formMail': 'Mail',
+  'formName': 'Name',
+  'formQuestion': 'Question',
+  'formSend': 'Send'
+}

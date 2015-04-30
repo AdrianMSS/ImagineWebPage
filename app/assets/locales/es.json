@@ -1,0 +1,18 @@
+{
+  'menuCollection': 'Colección',
+  'menuShop': 'Compras',
+  'menuDesigner': 'Diseñadora',
+  'menuStylism': 'Estilismo',
+  'menuContact': 'Contacto',
+  'homeTitle': 'es el complemento perfecto para  la mujer contemporánea.',
+  'aboutTitle1': 'Acerca de Siqueiros',
+  'aboutTitle2': 'Siqueiros y Responsabilidad Social',
+  'aboutText1': '<span>S</span><p>iqueiros es el complemento perfecto para  la mujer contemporánea. Aquellas que caminan seguras de si mismas con grandes retos y ambiciones. Y que en un ambiente urbano conocen la importancia de una vida saludable. Son mujeres cultas y consientes de la sociedad, que se abren paso al éxito y no creen en los límites. Para ellas, Siqueiros ofrece colecciones contemporáneas e inteligentes que hacen más práctico su diario vivir. Fundiendo la estética y las últimas tendencias de la moda en su día a día.</p>',
+  'aboutText2': '<span>E</span><p>n nuestra empresa somos conscientes de entorno social y ambiental. Por ello, ponemos en práctica la responsabilidad social empresarial. Entre nuestras prácticas, los procesos químicos llevados a cabo por la marca se realizan con elementos naturales que dejan cero residuos en el ambiente. Además, tenemos la meta de ejecutar una producción con cero desperdicio. Para lograrlo, todos los retazos de las colecciones son triturados y mezclados con espuma se utiliza de relleno para almohadas que son donadas al Hospicio de Huérfanos de San José, Costa Rica. ¡Apóyanos  y únete a la causa!</p>',
+  'contactTitle': 'Háganos sus',
+  'contactSubtitle': 'P R E G U N T A S',
+  'formMail': 'Correo',
+  'formName': 'Nombre',
+  'formQuestion': 'Consulta',
+  'formSend': 'Enviar'
+}
