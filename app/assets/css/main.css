@@ -283,6 +283,12 @@ a:after {
     background-image: -webkit-linear-gradient( -45deg,  #242424 10%, transparent 0%, transparent 60%, #242424 0%);
     background-image: linear-gradient( -45deg,  #242424 10%, transparent 0%, transparent 60%, #242424 0%);
 }
+.div1 img{
+    width: 80%;
+}
+.shadow{
+    background: rgba(0, 0, 0, 0.8);
+}
 .div2{
     height: 100%;
     background-image: -webkit-linear-gradient( -45deg, transparent 60%, #242424 40%);
@@ -693,4 +699,48 @@ p{
 }
 .subtitle{
     font-size: 60%;
+}
+/* Metodology Sprite */
+
+#metodologyImg {
+    height: 0;
+    background-image: url(../img/metodology_img.png);
+    transition: all 2s ease;
+    -webkit-transition: all 2s ease;
+    -moz-transition: all 2s ease; 
+}
+.metodologyImg_1 {  
+    background-size: 100%;
+    width: 80%; 
+    padding-bottom: 20%;
+    display: inline-block;
+}
+.metodologyImg_2 { 
+    width: 25%;
+    padding-bottom: 40%;
+    background-position: 3% 100%;
+    background-size: 320%;
+    display: inline-block;
+}
+.metodologyImg_3 { 
+    width: 25%;
+    padding-bottom: 40%;
+    background-position: 50% 100%;
+    background-size: 320%;
+    display: inline-block;
+}
+.metodologyImg_4 { 
+    width: 25%;
+    padding-bottom: 20%;
+    background-position: 94% 50%;
+    background-size: 320%;
+    display: inline-block;
+}
+.metodologyButton{
+    color: white;
+    cursor: pointer;
+    font-size: x-large;
+}
+.metodologyButton.active{
+  font-weight: bold;
 }
