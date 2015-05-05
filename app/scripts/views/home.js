@@ -37,7 +37,7 @@ define([
       $('.imagineButton').addClass('active');
     },
 
-    sendForm: function(){
+    sendForm: function(e){
       e.preventDefault();
       var url = 'email',
         inputEmail = $('#inputEmail').val(),
