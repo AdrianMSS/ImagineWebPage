@@ -14,6 +14,8 @@
   'nameContact': 'Name',
   'textContact': 'Text',
   'sendContact': 'Send',
+  'msgContact': 'Message Sent',
+  'errorContact': 'Please Try Again',
   'footer': 'Created By',
   'hardwarethonImg': 'src="/assets/img/hardwarethonEng_img.png"'
 }

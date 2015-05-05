@@ -17,7 +17,8 @@ define([
       'click .imagineButton': 'metodologyButton1',
       'click .xButton': 'metodologyButton2',
       'click .yButton': 'metodologyButton3',
-      'click .zButton': 'metodologyButton4'
+      'click .zButton': 'metodologyButton4',
+      'click #inputButton': 'sendForm'
     },
 
     initialize: function (options) {
@@ -34,6 +35,36 @@ define([
       this.$el.append(this.home_template());
       $('.metodologyButton').removeClass('active');
       $('.imagineButton').addClass('active');
+    },
+
+    sendForm: function(){
+      e.preventDefault();
+      var url = 'email',
+        inputEmail = $('#inputEmail').val(),
+        inputName = $('#inputName').val(),
+        inputText = $('#inputText').val();
+      $.ajax({ 
+        url: url,
+        type: 'POST',
+        data: JSON.stringify({
+          'email': inputEmail, 
+          'name': inputName,
+          'text': inputText
+        }),
+        beforeSend : function(req) { 
+          req.setRequestHeader('content-type', 'application/json'); 
+        },
+        success: function(res){
+          $('#formSuccess').removeClass('hidden');
+          $('#inputEmail').val(''),
+          $('#inputName').val(''),
+          $('#inputText').val('');
+          setTimeout(this.addHidden, 2000, '#formSuccess');
+        }.bind(this),
+        error: function(res){
+          setTimeout(this.addHidden, 2000, '#formError');
+        }.bind(this)        
+      });
     },
 
     metodologyButton1: function(e){
@@ -197,6 +228,10 @@ define([
         }
       }
       this.scrollPos = e.currentTarget.scrollY;
+    },
+
+    addHidden: function(idMsg) {
+      $(idMsg).addClass('hidden');
     }
   });
 

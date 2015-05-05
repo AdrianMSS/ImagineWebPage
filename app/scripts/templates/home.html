@@ -81,12 +81,14 @@
 				
 				<div class="col-lg-6">
 						<form class="form-horizontal" role="form">
-						  <div class="form-group">
-						    <input type="email" class="form-control" id="inputEmail1" placeholder=<%= polyglot.t('mailContact') %>>
-						    <input type="text" class="form-control" id="text1" placeholder=<%= polyglot.t('nameContact') %>>
-						    <input type="textfield" class="form-control" id="text1" placeholder=<%= polyglot.t('textContact') %>>
-						    <button type="submit" class="btn btn-success"><%= polyglot.t('sendContact') %></button>
-						  </div>
+							<div class="form-group">
+							    <input type="email" class="form-control" id="inputEmail" placeholder=<%= polyglot.t('mailContact') %>>
+							    <input type="text" class="form-control" id="inputName" placeholder=<%= polyglot.t('nameContact') %>>
+							    <input type="textfield" class="form-control" id="inputText" placeholder=<%= polyglot.t('textContact') %>>
+							    <button class="btn btn-success" id="inputButton"><%= polyglot.t('sendContact') %></button>
+							</div>
+							<label id="formSuccess" class= "hidden alert alert-success"><%= polyglot.t('msgContact') %></label>
+							<label id="formError" class= "hidden alert alert-danger"><%= polyglot.t('errorContact') %></label>
 					   </form><!-- form -->
 				</div><!-- col -->
 			</div>
