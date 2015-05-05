@@ -16,14 +16,10 @@ define([
     MenuView = new menuView(),
     Router = Backbone.Router.extend({
       routes: {
-          '':     'home',
-          'home': 'home',
-          'collection': 'collection',
-          'contact': 'contact',
-          'about': 'about',
-          'designer': 'designer',
           'en': 'en',
-          'es': 'es'
+          'es': 'es',
+          '': 'reRoute',
+          '*path':  'reRoute'
       },
       objectLocal : {},
       menuRender : false,
@@ -44,6 +40,8 @@ define([
           window.polyglot.extend(phrase);
           i=i+3;
         };
+        MenuView.render();
+        HomeView.render();
       },
 
       en: function() {
@@ -58,8 +56,11 @@ define([
           window.polyglot.extend(phrase);
           i=i+3;
         };
-        this.menuRender = false;
-        window.history.back();
+        MenuView.render();
+        HomeView.render();
+        if(window.history.length>2){
+          window.history.back();
+        }
       },
 
       es: function() {
@@ -74,44 +75,114 @@ define([
           window.polyglot.extend(phrase);
           i=i+3;
         };
-        this.menuRender = false;
-        window.history.back();
+        MenuView.render();
+        HomeView.render();
+        if(window.history.length>2){
+          window.history.back();
+        }
       },
 
-      home: function() {
-          if(!this.menuRender){
-            MenuView.render();
-            this.menuRender = true;
-          }
-          HomeView.render();
+      reRoute: function(){
+        switch(window.location.hash){
+          case '#home':
+            setTimeout(this.home, 100, this);
+            break;
+          case '#metodology':
+            setTimeout(this.metodology, 100, this);
+            break;
+          case '#proyects':
+            setTimeout(this.proyects, 100, this);
+            break;
+          case '#hardwarethon':
+            setTimeout(this.hardwarethon, 100, this);
+            break;
+          case '#culture':
+            setTimeout(this.culture, 100, this);
+            break;
+          case '#team':
+            setTimeout(this.team, 100, this);
+            break;
+          case '#contact':
+            setTimeout(this.contact, 100, this);
+            break;
+          default:
+            setTimeout(this.home, 100, this);
+            break;
+        }
       },
 
-      collection: function() {
-          /*if(!this.menuRender){
-            MenuView.render();
-            this.menuRender = true;
-          }
-          CollectionsView.render();*/
+      home: function(that) {
+          HomeView.setPosition(0);
+          $(window).unbind('scroll');
+          $("html, body").animate({ scrollTop: $("#homeDiv").offset().top-50 }, 'slow');
+          setTimeout(that.bindScroll, 1000);
+          $(".navbar-nav li").removeClass('navbar-active');
+          $(".homeMenu").addClass('navbar-active'); 
+          $(".div2").removeClass('back2'); 
+      },
+      
+      metodology: function(that) {
+          HomeView.setPosition(0);
+          $(window).unbind('scroll');
+          $("html, body").animate({ scrollTop: $("#metodologyDiv").offset().top-50 }, 'slow');
+          setTimeout(that.bindScroll, 1000);
+          $(".navbar-nav li").removeClass('navbar-active');
+          $(".metodologyMenu").addClass('navbar-active'); 
+          $(".div2").removeClass('back2'); 
+      },
+      
+      proyects: function(that) {
+          HomeView.setPosition(1);
+          $(window).unbind('scroll');
+          $("html, body").animate({ scrollTop: $("#proyectsDiv").offset().top-50 }, 'slow');
+          setTimeout(that.bindScroll, 1000);
+          $(".navbar-nav li").removeClass('navbar-active');
+          $(".proyectsMenu").addClass('navbar-active'); 
+          $(".div2").removeClass('back2'); 
+      },
+      
+      hardwarethon: function(that) {
+          HomeView.setPosition(1);
+          $(window).unbind('scroll');
+          $("html, body").animate({ scrollTop: $("#hardwarethonDiv").offset().top-50 }, 'slow');
+          setTimeout(that.bindScroll, 1000);
+          $(".navbar-nav li").removeClass('navbar-active');
+          $(".hardwarethonMenu").addClass('navbar-active'); 
+          $(".div2").removeClass('back2'); 
       },
 
-      contact: function() {
-          $("html, body").animate({ scrollTop: $("#contactDiv").offset().top }, 'slow', 'swing');
+      culture: function(that) {
+          HomeView.setPosition(1);
+          $(window).unbind('scroll');
+          $("html, body").animate({ scrollTop: $("#cultureDiv").offset().top-100 }, 'slow');
+          setTimeout(that.bindScroll, 1000);
+          $(".navbar-nav li").removeClass('navbar-active');
+          $(".cultureMenu").addClass('navbar-active'); 
+          $(".div2").addClass('back2'); 
       },
 
-      about: function() {
-          if(!this.menuRender){
-            MenuView.render();
-            this.menuRender = true;
-          }
-          AboutUsView.render();
+      team: function(that) {
+          HomeView.setPosition(1);
+          $(window).unbind('scroll');
+          $("html, body").animate({ scrollTop: $("#teamDiv").offset().top-100 }, 'slow');
+          setTimeout(that.bindScroll, 1000);
+          $(".navbar-nav li").removeClass('navbar-active');
+          $(".teamMenu").addClass('navbar-active'); 
+          $(".div2").addClass('back2'); 
+      },
+      
+      contact: function(that) {
+          HomeView.setPosition(1);
+          $(window).unbind('scroll');
+          $("html, body").animate({ scrollTop: $("#contactDiv").offset().top-100 }, 'slow');
+          setTimeout(that.bindScroll, 1000);
+          $(".navbar-nav li").removeClass('navbar-active');
+          $(".contactMenu").addClass('navbar-active'); 
+          $(".div2").addClass('back2'); 
       },
 
-      designer: function() {
-          if(!this.menuRender){
-            MenuView.render();
-            this.menuRender = true;
-          }
-          DesignerView.render();
+      bindScroll: function(){
+        $(window).scroll(HomeView.windowScroll);
       }
   });
   return Router;

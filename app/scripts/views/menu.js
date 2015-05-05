@@ -9,6 +9,7 @@ define([
     el: '#navbar-main',
     menu_template: _.template(menu_template),
     events: {
+      'click ul': 'hideMenu'
     },
 
     initialize: function (options) {
@@ -20,6 +21,10 @@ define([
     render: function() {
       this.$el.html('').hide().fadeIn().slideDown('slow');
       this.$el.append(this.menu_template());
+    },
+
+    hideMenu: function(){
+      $('.navbar-collapse').removeClass('in');
     }
   });
 

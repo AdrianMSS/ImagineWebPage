@@ -2,12 +2,12 @@
 	<div class="div1">
 		<div class="row">
 			<div class="col-md-12 grid-md-12"> 
-		        <img src="assets/img/home_img.png">
+		        <img class="homeImg" src="assets/img/home_img.png">
 			</div>
 		</div>
 		<div class="row shadow" id="metodologyDiv">
 			<div class="col-md-12 grid-md-12 "> 
-				<h1>Metodología</h1>
+				<h1><%= polyglot.t('titleMetodology') %></h1>
 				<br>
 		        <a class="metodologyButton imagineButton">Imagine</a>
 		        <a class="metodologyButton xButton">X</a>
@@ -17,63 +17,191 @@
 				<div class="metodologyImg_1" id="metodologyImg"></div>
 			</div>
 		</div>
-		<div class="row">
+		<div class="row" id="proyectsDiv">
 			<div class="col-md-12 grid-md-12"> 
-	  			<img src="assets/img/team_img.png">
+		        <h1><%= polyglot.t('titleProyects') %></h1>
+				<br>
 			</div>
 		</div>
   	</div>
 </div>
+<div class="div2">
+  	<div id="hardwarethonDiv">
+		<div class="row">
+			<img src="assets/img/hardwarethonTitle_img.png">
+			<br><br>
+			<div class="col-md-6 grid-md-6" id="hardwarethon1">
+				<img class="hardwarethon-image1" src="/assets/img/hardwarethon1_img.png" alt=""> 
+			</div>
+			<div class="col-md-6 grid-md-6" id="hardwarethon2" >  
+				<img class="hardwarethon-image2" <%= polyglot.t('hardwarethonImg') %> alt=""> 
+				<a href="http://www.hardwarethon.com" target="_blank"><img class="hardwarethon-image3" src="/assets/img/hwIcon_img.png" alt=""></a>
+				<a href="https://www.facebook.com/pages/Hardwarethon/1500581303545910" target="_blank"><img class="hardwarethon-image4" src="/assets/img/hwFb_img.png" alt=""></a>
+			</div>
+		</div>
+		<div id="cultureDiv">
+	  		<div class="row">
+				<div class="col-md-12 grid-md-12">
+					<h1><%= polyglot.t('titleCulture') %></h1>
+					<br> 
+				</div>
+			</div>
+			<div class="shadow" id="teamDiv">
+				<h1><%= polyglot.t('titleTeam') %></h1>
+				<div class="row"> 
+					<div class="col-md-4 grid-md-4">
+						<div id="javierSpot" class="memberDiv" data-toggle="modal" data-target="#javierModal"></div>
+					</div>
+					<div class="col-md-4 grid-md-4">
+						<div id="bryanSpot" class="memberDiv" data-toggle="modal" data-target="#bryanModal"></div>
+					</div>
+					<div class="col-md-4 grid-md-4">
+						<div id="hugoSpot" class="memberDiv" data-toggle="modal" data-target="#hugoModal"></div>
+					</div>
+					<div class="col-md-4 grid-md-4">
+						<div id="ernerstoSpot" class="memberDiv" data-toggle="modal" data-target="#ernestoModal"></div>
+					</div>
+					<div class="col-md-4 grid-md-4">
+						<div id="adrianSpot" class="memberDiv" data-toggle="modal" data-target="#adrianModal"></div>
+					</div>
+					<div class="col-md-4 grid-md-4">
+						<div id="juancarlosSpot" class="memberDiv" data-toggle="modal" data-target="#juancarlosModal"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row" id="contactDiv">
+			<div class="row">	
+				<h3><%= polyglot.t('titleContact') %></h3>
+				<div class="col-lg-5">
+					<span class="icon icon-envelop"></span> <a href="#"> contact@imaginexyz.com</a> <br/>
+					<span class="icon icon-twitter"></span> <a href="#"> @technergy </a> <br/>
+					<span class="icon icon-facebook"></span> <a href="#"> Technergy CR</a> <br/>
+				</div><!-- col -->
+				
+				<div class="col-lg-6">
+						<form class="form-horizontal" role="form">
+						  <div class="form-group">
+						    <input type="email" class="form-control" id="inputEmail1" placeholder=<%= polyglot.t('mailContact') %>>
+						    <input type="text" class="form-control" id="text1" placeholder=<%= polyglot.t('nameContact') %>>
+						    <input type="textfield" class="form-control" id="text1" placeholder=<%= polyglot.t('textContact') %>>
+						    <button type="submit" class="btn btn-success"><%= polyglot.t('sendContact') %></button>
+						  </div>
+					   </form><!-- form -->
+				</div><!-- col -->
+			</div>
+	  	</div>
+	</div>
+</div>
+<footer class="footer">
+	<h4><%= polyglot.t('footer') %> <a href="http://imaginexyz.com" target="_blank"><img src="assets/img/imagine_img.png"></a> - Copyright 2015</h4>
+</footer>
 
-<div class="container greywrap" id="contactDiv" name="contact">
-	<div class="row">
-	<br>
-		<h1 class="centered title-border">GRACIAS POR PREFERIRNOS</h1>
-		<br>
-		<br>
-		<div class="col-lg-4">
-			<h3>Información de Contacto</h3>
-			<p><span class="icon icon-home"></span> Calle 35 37, Avenida 15, casa 3552, San José, CR.<br/>
-				<span class="icon icon-phone"></span> +506 2250 8888 <br/>
-				<span class="icon icon-mobile"></span> +506 8888 8888 <br/>
-				<span class="icon icon-envelop"></span> <a href="#"> email@technergy.co.cr</a> <br/>
-				<span class="icon icon-twitter"></span> <a href="#"> @technergy </a> <br/>
-				<span class="icon icon-facebook"></span> <a href="#"> Technergy CR</a> <br/>
-			</p>
-		</div><!-- col -->
-		
-		<div class="col-lg-8">
-			<h3>Contáctenos</h3>
-			<p>Estamos deseosos de ayudarle a crear un mundo más verde, escuchar sugerencias o recibir comentarios.</p>
-			<p>
-				<form class="form-horizontal" role="form">
-				  <div class="form-group">
-				    <label for="inputEmail1" class="col-lg-4 control-label"></label>
-				    <div class="col-lg-12">
-				      <input type="email" class="form-control" id="inputEmail1" placeholder="Correo">
-				    </div>
-				  </div>
-				  <div class="form-group">
-				    <label for="text1" class="col-lg-4 control-label"></label>
-				    <div class="col-lg-12">
-				      <input type="text" class="form-control" id="text1" placeholder="Nombre">
-				    </div>
-				  </div>
-				  <div class="form-group">
-				    <label for="text1" class="col-lg-4 control-label"></label>
-				    <div class="col-lg-12">
-				      <input type="textfield" class="form-control" id="text1" placeholder="Texto">
-				    </div>
-				  </div>
-				  <div class="form-group">
-				    <div class="col-lg-12">
-				      <button type="submit" class="btn btn-success">Enviar</button>
-				    </div>
-				  </div>
-			   </form><!-- form -->
-			</p>
-		</div><!-- col -->
+<!-- Modal -->
+<div class="modal fade" id="javierModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" id="closeModal">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Javier Carvajal</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">       
+          <div class="col-xs-6 col-sm-6">            
+          </div> 
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-	</div><!-- row -->
 
-</div><!-- container -->
+<div class="modal fade" id="bryanModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" id="closeModal">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Bryan Navarro</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">       
+          <div class="col-xs-6 col-sm-6">            
+          </div> 
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="hugoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" id="closeModal">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Hugo Sánchez</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">       
+          <div class="col-xs-6 col-sm-6">            
+          </div> 
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="ernestoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" id="closeModal">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Ernesto Olivares</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">       
+          <div class="col-xs-6 col-sm-6">            
+          </div> 
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="adrianModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" id="closeModal">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Adrián Sánchez</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">       
+          <div class="col-xs-6 col-sm-6">            
+          </div> 
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="juancarlosModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" id="closeModal">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Juan Carlos Martí</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">       
+          <div class="col-xs-6 col-sm-6">            
+          </div> 
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

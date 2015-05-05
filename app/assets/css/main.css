@@ -149,10 +149,6 @@ hr:before {
     background: #ccc;
 }
 
-a img {
-    background: white;
-}
-
 .odd a img {
     background: #f5f5f5;
 }
@@ -161,7 +157,7 @@ a img {
 h1, h2, h3, h4, h5, h6 {
     font-family: "Raleway";
     font-weight: 300;
-    color: #333;
+    color: white;
 }
 
 
@@ -271,28 +267,40 @@ a:after {
    ========================================================================== */
 
 #homeDiv {
+    padding-top: 50px;
 	background-image: url(../img/giphy.gif);
     text-align: center;
 }
-#homeDiv img{
-    padding-top: 10%;
-    padding-bottom: 10%;
-}
 .div1{
     height: 100%;
-    background-image: -webkit-linear-gradient( -45deg,  #242424 10%, transparent 0%, transparent 60%, #242424 0%);
-    background-image: linear-gradient( -45deg,  #242424 10%, transparent 0%, transparent 60%, #242424 0%);
-}
-.div1 img{
-    width: 80%;
+    background-image: -webkit-linear-gradient( -60deg, #1A1A1A 40%, transparent 0%, transparent 60%, #1A1A1A 0%);
+    background-image: linear-gradient( -60deg, #1A1A1A 40%, transparent 0%, transparent 60%, #1A1A1A 0%);
 }
 .shadow{
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.9);
+}
+.homeImg{
+    width: 80%;
 }
 .div2{
     height: 100%;
-    background-image: -webkit-linear-gradient( -45deg, transparent 60%, #242424 40%);
-    background-image: linear-gradient( -45deg, transparent 60%, #242424 40%);
+    background: url(../img/hardwarethonBack_img.png);
+    transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease; 
+
+}
+.div2.back2{
+    background: url(../img/giphy.gif);
+}
+#hardwarethonDiv{
+    padding-bottom: 100px;
+    background-image: -webkit-linear-gradient( 60deg, #1A1A1A 40%, transparent 0%, transparent 60%, #1A1A1A 0%);
+    background-image: linear-gradient( 60deg, #1A1A1A 40%, transparent 0%, transparent 60%, #1A1A1A 0%);
+}
+.row{
+    padding: 50px;
+    text-align: center;
 }
 /*
 background-image: linear-gradient( -45deg, transparent 20%, #242424 0%, #242424 80%, transparent 0%);
@@ -344,18 +352,6 @@ background-image: linear-gradient( -45deg, transparent 20%, #242424 0%, #242424 
 	margin-bottom: 10px;
 }
 
-#footerwrap {
-	background: #2b2b2b;
-	margin-top: 0px;
-	padding-top: 40px;
-	padding-bottom: 20px;
-	border-bottom: 1px solid #ddd;
-	text-align: center;
-}
-
-#footerwrap h4 {
-	color: white;
-}
 
 
 /* ==========================================================================
@@ -645,7 +641,7 @@ background-image: linear-gradient( -45deg, transparent 20%, #242424 0%, #242424 
 /*----------------TECHNERGY---------------*/
 
 .navbar-image {
-    margin-top: -12px;
+    margin-top: -10px;
     background: transparent;
     max-width: 50px;
 }
@@ -655,11 +651,11 @@ background-image: linear-gradient( -45deg, transparent 20%, #242424 0%, #242424 
 }
 
 .navbar-inverse .navbar-nav > li > a:hover {
-    color: #A2BC35;
+    color: white;
 }
 
 .navbar-inverse{
-    background-color: #003234;
+    background-color: rgba(0, 0, 0, 0.9);
 }
 
 .title-border{
@@ -743,4 +739,144 @@ p{
 }
 .metodologyButton.active{
   font-weight: bold;
+}
+/* Team Sprite */
+#teamDiv{
+    text-align: center;
+    padding-right: 20%;
+    padding-left: 20%;
+}
+.memberDiv{
+    width: 237px;
+    height: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    background: url(../img/team_img.png) no-repeat;
+    transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease; 
+}
+.memberDiv:hover{
+    background: url(../img/team2_img.png) no-repeat;
+}
+#javierSpot{
+    background-position: 0px 0px;
+}
+#bryanSpot{
+    background-position: -237px 0px;
+}
+#hugoSpot{
+    background-position: -474px 0px;
+}
+#ernerstoSpot{
+    background-position:  0px -151px;
+}
+#adrianSpot{
+    background-position:  -237px -151px;
+}
+#juancarlosSpot{
+    background-position:  -474px -151px
+}
+
+.navbar-active{
+  font-weight: bold;
+  color: white;
+}
+.homeMenu{
+    background-image: url(../img/navbarLogo2_img.png);
+    background-repeat: no-repeat;
+}
+.in .homeMenu{
+    background-image: none;
+}
+.in a{
+    color: white;
+}
+.languageBar{
+    position: fixed;
+    display: flex;
+    z-index: 10000;
+    right: 10%;
+    padding: 20px;
+}
+.scrollFreeze{
+    height: 100%;
+    overflow: hidden;
+}
+.footer{
+    background-color: black;
+    text-align: center;
+    position: fixed;
+    bottom: 0%;
+    width: 100%;
+}
+.hardwarethon-image1{  
+    max-height: 400px; 
+    width: 100%;
+}
+.hardwarethon-image2{  
+    max-height: 400px; 
+    width: 100%;
+}
+.hardwarethon-image3{  
+    bottom: 20%;
+    position: absolute;
+    margin-left: -80px;
+}
+.hardwarethon-image4{  
+    bottom: 20%;
+    position: absolute;
+    margin-left: -10px;
+}
+#contactDiv{
+  -webkit-transform: skew(-40deg);
+  -moz-transform: skew(-40deg);
+  -o-transform: skew(-40deg);
+  margin-top: 50px;
+  padding: 0px;
+  padding-right: 5%;
+  padding-left: 5%;
+  width: 60%;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: black;
+  height: 100%;
+}
+#contactDiv .row{
+  -webkit-transform: skew(40deg);
+  -moz-transform: skew(20deg);
+  -o-transform: skew(20deg);
+ }
+
+@media (max-width: 1000px) {
+    #contactDiv{
+      -webkit-transform: skew(0deg);
+      -moz-transform: skew(0deg);
+      -o-transform: skew(0deg);
+    }
+    #contactDiv .row{
+      -webkit-transform: skew(0deg);
+      -moz-transform: skew(0deg);
+      -o-transform: skew(0deg);
+    }
+    .memberDiv{
+        margin-left: -50px;
+    }
+}
+
+@media (max-device-width: 480px) and (orientation: portrait) {
+    #contactDiv{
+      -webkit-transform: skew(0deg);
+      -moz-transform: skew(0deg);
+      -o-transform: skew(0deg);
+    }
+    #contactDiv .row{
+      -webkit-transform: skew(0deg);
+      -moz-transform: skew(0deg);
+      -o-transform: skew(0deg);
+    }
+    .memberDiv{
+        margin-left: -50px;
+    }
 }
