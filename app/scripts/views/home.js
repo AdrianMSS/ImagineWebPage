@@ -9,25 +9,30 @@ define([
   var HomeView = Backbone.View.extend({
     el: '.content',
     home_template: _.template(home_template),
-    metodologyCount:0,
-    metodologyLeft:false,
+    cultureCount:101,
     scrollPos:0,
+    scrollMov:0,
+    mobileY1:0,
+    mobileY2:0,
+    mobileX1:0,
+    mobileX2:0,
     events: {
       'keydown': 'keyPressed',
+      'mousewheel': 'wheelMove',
+      'touchstart': 'mobilePos1',
+      'touchend': 'mobilePos2',
       'click .imagineButton': 'metodologyButton1',
       'click .xButton': 'metodologyButton2',
       'click .yButton': 'metodologyButton3',
       'click .zButton': 'metodologyButton4',
+      'click .cultureArrow1': 'culturePrev',
+      'click .cultureArrow2': 'cultureNext',
       'click #inputButton': 'sendForm'
     },
 
     initialize: function (options) {
-        // ---------------------------------
-        // Add the options as part of the instance
-        //_.extend(this, options);
-        _.bindAll(this, 'windowScroll');
-        // bind to window
-        $(window).scroll(this.windowScroll);
+        _.bindAll(this, 'keyPressed');
+        $(document).bind('keydown', this.keyPressed);
     },
 
     render: function() {
@@ -68,7 +73,7 @@ define([
     },
 
     metodologyButton1: function(e){
-      this.metodologyCount = 1;
+      this.scrollPos = 1;
       $('.metodologyButton').removeClass('active');
       $('.imagineButton').addClass('active');
       $('#metodologyImg').removeClass();
@@ -76,7 +81,7 @@ define([
     },
 
     metodologyButton2: function(e){
-      this.metodologyCount = 2;
+      this.scrollPos = 2;
       $('.metodologyButton').removeClass('active');
       $('.xButton').addClass('active');
       $('#metodologyImg').removeClass();
@@ -84,7 +89,7 @@ define([
     },
 
     metodologyButton3: function(e){
-      this.metodologyCount = 3;
+      this.scrollPos = 3;
       $('.metodologyButton').removeClass('active');
       $('.yButton').addClass('active');
       $('#metodologyImg').removeClass();
@@ -92,142 +97,202 @@ define([
     },
 
     metodologyButton4: function(e){
-      this.metodologyCount = 4;
+      this.scrollPos = 4;
       $('.metodologyButton').removeClass('active');
       $('.zButton').addClass('active');
       $('#metodologyImg').removeClass();
       $('#metodologyImg').addClass('metodologyImg_4');
     },
 
-    setPosition: function(num){
-      if(num==0){
-        this.metodologyCount = 0;
-        $('.metodologyButton').removeClass('active');
-        $('.imagineButton').addClass('active');
-        $('#metodologyImg').removeClass();
-        $('#metodologyImg').addClass('metodologyImg_1');
+    keyPressed: function(e){
+      if(e.keyCode===38 && this.scrollPos>0){
+        this.scrollPos--;
+        this.movePage(this.scrollPos);
       }
-      else{
-        this.metodologyCount = 4;
-        $('.metodologyButton').removeClass('active');
-        $('.zButton').addClass('active');
-        $('#metodologyImg').removeClass();
-        $('#metodologyImg').addClass('metodologyImg_4');  
+      else if(e.keyCode===40 && this.scrollPos<9){
+        this.scrollPos++;
+        this.movePage(this.scrollPos);
+      }
+      else if(this.scrollPos===7 && e.keyCode===39){
+        this.cultureNext();
+      }
+      else if(this.scrollPos===7 && e.keyCode===37){
+        this.culturePrev();
+      }
+    },
+    wheelMove: function(e){
+      if(e.originalEvent.wheelDelta>0 && this.scrollPos>0){
+        this.scrollPos--;
+        this.movePage(this.scrollPos);
+      }
+      else if(e.originalEvent.wheelDelta<0 && this.scrollPos<9){
+        this.scrollPos++;
+        this.movePage(this.scrollPos);
       }
     },
 
-    bindScroll: function(that){
-      $(window).scroll(that.windowScroll);
-      $( "body" ).removeClass( "scrollFreeze" );
+    mobilePos1: function(e){
+      this.mobileY1 = e.originalEvent.touches[0].clientY;
+      this.mobileX1 = e.originalEvent.touches[0].clientX;
     },
 
-    windowScroll: function(e){
-      switch(true){
-        case ($("#contactDiv").offset().top-50<=e.currentTarget.scrollY):    
-          $(".navbar-nav li").removeClass('navbar-active');
-          $(".contactMenu").addClass('navbar-active'); 
-          break;
-        case ($("#teamDiv").offset().top-100<=e.currentTarget.scrollY):    
-          $(".navbar-nav li").removeClass('navbar-active');
-          $(".teamMenu").addClass('navbar-active'); 
-          this.metodologyLeft = false;
-          break;
-        case ($("#cultureDiv").offset().top-100<=e.currentTarget.scrollY):    
-          $(".navbar-nav li").removeClass('navbar-active');
-          $(".cultureMenu").addClass('navbar-active'); 
-          $(".div2").addClass('back2'); 
-          break;
-        case ($("#hardwarethonDiv").offset().top-50<=e.currentTarget.scrollY):    
-          $(".navbar-nav li").removeClass('navbar-active');
-          $(".hardwarethonMenu").addClass('navbar-active');   
-          $(".div2").removeClass('back2'); 
-          break;
-        case ($("#proyectsDiv").offset().top-50<=e.currentTarget.scrollY):    
-          $(".navbar-nav li").removeClass('navbar-active');
-          $(".proyectsMenu").addClass('navbar-active'); 
-          this.metodologyLeft = false;
-          break;
-        case ($("#metodologyDiv").offset().top-50<=e.currentTarget.scrollY):    
-          $(".navbar-nav li").removeClass('navbar-active');
-          $(".metodologyMenu").addClass('navbar-active'); 
-          this.metodologyLeft = true;
-          break;
-        case (e.currentTarget.scrollY<$("#metodologyDiv").offset().top-50 ):
-          $(".navbar-nav li").removeClass('navbar-active');
-          $(".homeMenu").addClass('navbar-active'); 
-          break;
-      };
-      if(this.metodologyLeft){
-        if(this.scrollPos-e.currentTarget.scrollY>0){
-          switch(this.metodologyCount){
-            case 4:    
-              $(window).unbind('scroll');
-              $("html, body").animate({ scrollTop: $("#metodologyDiv").offset().top-50 }, 'slow');
-              $( ".zButton" ).trigger( "click" );
-              setTimeout(this.bindScroll, 1000, this);
-              this.metodologyCount--; 
-              break;
-            case 3:    
-              $(window).unbind('scroll');
-              $("html, body").scrollTop($("#metodologyDiv").offset().top-50);
-              $( ".yButton" ).trigger( "click" );
-              $( "body" ).addClass( "scrollFreeze" );
-              setTimeout(this.bindScroll, 1000, this);
-              this.metodologyCount--; 
-              break;
-            case 2:    
-              $(window).unbind('scroll');
-              $("html, body").scrollTop($("#metodologyDiv").offset().top-50);
-              $( ".xButton" ).trigger( "click" );
-              $( "body" ).addClass( "scrollFreeze" );
-              setTimeout(this.bindScroll, 1000, this);
-              this.metodologyCount--; 
-              break;
-            case 1:    
-              $(window).unbind('scroll');
-              $("html, body").scrollTop($("#metodologyDiv").offset().top-50);
-              $( ".imagineButton" ).trigger( "click" );
-              $( "body" ).addClass( "scrollFreeze" );
-              setTimeout(this.bindScroll, 1000, this);
-              this.metodologyLeft = false;
-              this.metodologyCount--; 
-              break;
-          };  
+    mobilePos2: function(e){
+      this.mobileY2 = e.originalEvent.changedTouches[0].clientY;
+      this.mobileX2 = e.originalEvent.changedTouches[0].clientX;
+      if(this.mobileX1>(this.mobileX2+50)){
+        if(this.scrollPos===2){
+          this.scrollPos++;
+          this.movePage(this.scrollPos);
         }
-        else{
-          switch(this.metodologyCount){
-            case 0:    
-              $(window).unbind('scroll');
-              $("html, body").animate({ scrollTop: $("#metodologyDiv").offset().top-50 }, 'slow');
-              $( ".imagineButton" ).trigger( "click" );
-              $( "body" ).addClass( "scrollFreeze" );
-              setTimeout(this.bindScroll, 1000, this);
-              break;
-            case 1:    
-              $(window).unbind('scroll');
-              $("html, body").scrollTop($("#metodologyDiv").offset().top-50);
-              $( ".xButton" ).trigger( "click" );
-              $( "body" ).addClass( "scrollFreeze" );
-              setTimeout(this.bindScroll, 1000, this);
-              break;
-            case 2:    
-              $(window).unbind('scroll');
-              $("html, body").scrollTop($("#metodologyDiv").offset().top-50);
-              $( ".yButton" ).trigger( "click" );
-              $( "body" ).addClass( "scrollFreeze" );
-              setTimeout(this.bindScroll, 1000, this);
-              break;
-            case 3:    
-              $(window).unbind('scroll');
-              $("html, body").scrollTop($("#metodologyDiv").offset().top-50);
-              $( ".zButton" ).trigger( "click" );
-              $( "body" ).addClass( "scrollFreeze" );
-              setTimeout(this.bindScroll, 1000, this);
-              break;
-          };
+        else if(this.scrollPos===3){
+          this.scrollPos++;
+          this.movePage(this.scrollPos);
+        }
+        else if(this.scrollPos===1){
+          this.scrollPos++;
+          this.movePage(this.scrollPos);
+        }
+        else if(this.scrollPos===7){
+          this.cultureNext();
         }
       }
-      this.scrollPos = e.currentTarget.scrollY;
+      else if(this.mobileX1<(this.mobileX2-50)){
+        if(this.scrollPos===2){
+          this.scrollPos--;
+          this.movePage(this.scrollPos);
+        }
+        else if(this.scrollPos===3){
+          this.scrollPos--;
+          this.movePage(this.scrollPos);
+        }
+        else if(this.scrollPos===4){
+          this.scrollPos--;
+          this.movePage(this.scrollPos);
+        }
+        else if(this.scrollPos===7){
+          this.culturePrev();
+        }
+      }
+      else if(this.mobileY1>(this.mobileY2+50)){
+        if(this.scrollPos<9){
+          this.scrollPos++;
+          this.movePage(this.scrollPos);
+        }
+      }
+      else if(this.mobileY1<(this.mobileY2-50)){
+        if(this.scrollPos>0){
+          this.scrollPos--;
+          this.movePage(this.scrollPos);
+        }
+      }
+    },
+
+    culturePrev: function(){
+        this.cultureCount--;
+        var cultureClass = 'cultureImg_' + (Math.abs(this.cultureCount%10)),
+          cultureText = '<%= polyglot.t("cultureText'+(Math.abs(this.cultureCount%10))+'") %>';
+        $('#cultureImg').removeClass();
+        $('#cultureImg').addClass(cultureClass);
+        $('#cultureName').html(_.template(cultureText));
+    },
+
+    cultureNext: function(){
+        this.cultureCount++;
+        var cultureClass = 'cultureImg_' + (Math.abs(this.cultureCount%10)),
+          cultureText = '<%= polyglot.t("cultureText'+(Math.abs(this.cultureCount%10))+'") %>';
+        $('#cultureImg').removeClass();
+        $('#cultureImg').addClass(cultureClass);
+        $('#cultureName').html(_.template(cultureText));
+    },
+
+    movePage: function(scrollPos){
+      this.scrollPos = scrollPos;
+      switch(scrollPos){
+        case 0:
+          $(window).unbind('scroll');
+          $("html, body").animate({ scrollTop: $("#homeDiv").offset().top }, 'slow');
+          this.scrollMov = $("#homeDiv").offset().top;
+          $(".navbar-nav li").removeClass('navbar-active');
+          $(".homeMenu").addClass('navbar-active');
+          $(".div2").removeClass('back2');
+          break;
+        case 1:
+          $(window).unbind('scroll');
+          $("html, body").animate({ scrollTop: $("#metodologyDiv").offset().top }, 'slow');
+          $( ".imagineButton" ).trigger( "click" );
+          this.scrollMov = $("#metodologyDiv").offset().top;
+          $(".navbar-nav li").removeClass('navbar-active');
+          $(".metodologyMenu").addClass('navbar-active');
+          $(".div2").removeClass('back2');
+          break;
+        case 2:
+          $(window).unbind('scroll');
+          $("html, body").animate({ scrollTop: $("#metodologyDiv").offset().top }, 'slow');
+          $( ".xButton" ).trigger( "click" );
+          this.scrollMov = $("#metodologyDiv").offset().top;
+          $(".navbar-nav li").removeClass('navbar-active');
+          $(".metodologyMenu").addClass('navbar-active');
+          $(".div2").removeClass('back2');
+          break;
+        case 3:
+          $(window).unbind('scroll');
+          $("html, body").animate({ scrollTop: $("#metodologyDiv").offset().top }, 'slow');
+          $( ".yButton" ).trigger( "click" );
+          this.scrollMov = $("#metodologyDiv").offset().top;
+          $(".navbar-nav li").removeClass('navbar-active');
+          $(".metodologyMenu").addClass('navbar-active');
+          $(".div2").removeClass('back2');
+          break;
+        case 4:
+          $(window).unbind('scroll');
+          $("html, body").animate({ scrollTop: $("#metodologyDiv").offset().top }, 'slow');
+          $( ".zButton" ).trigger( "click" );
+          this.scrollMov = $("#metodologyDiv").offset().top;
+          $(".navbar-nav li").removeClass('navbar-active');
+          $(".metodologyMenu").addClass('navbar-active');          
+          $(".div2").removeClass('back2');
+          break;
+        case 5:
+          $(window).unbind('scroll');
+          $("html, body").animate({ scrollTop: $("#proyectsDiv").offset().top }, 'slow');
+          this.scrollMov = $("#proyectsDiv").offset().top;
+          $(".navbar-nav li").removeClass('navbar-active');
+          $(".proyectsMenu").addClass('navbar-active');
+          $(".div2").removeClass('back2');
+          break;
+        case 6:
+          $(window).unbind('scroll');
+          $("html, body").animate({ scrollTop: $("#hardwarethonDiv").offset().top }, 'slow');
+          this.scrollMov = $("#hardwarethonDiv").offset().top;
+          $(".navbar-nav li").removeClass('navbar-active');
+          $(".hardwarethonMenu").addClass('navbar-active');
+          $(".div2").removeClass('back2');
+          break;
+        case 7:
+          $(window).unbind('scroll');
+          $("html, body").animate({ scrollTop: $("#cultureDiv").offset().top }, 'slow');
+          this.scrollMov = $("#cultureDiv").offset().top;
+          $(".navbar-nav li").removeClass('navbar-active');
+          $(".cultureMenu").addClass('navbar-active');
+          $(".div2").addClass('back2');
+          break;
+        case 8:
+          $(window).unbind('scroll');
+          $("html, body").animate({ scrollTop: $("#teamDiv").offset().top }, 'slow');
+          this.scrollMov = $("#teamDiv").offset().top;
+          $(".navbar-nav li").removeClass('navbar-active');
+          $(".teamMenu").addClass('navbar-active');
+          $(".div2").addClass('back2');
+          break;
+        case 9:
+          $(window).unbind('scroll');
+          $("html, body").animate({ scrollTop: $("#contactDiv").offset().top }, 'slow');
+          this.scrollMov = $("#contactDiv").offset().top;
+          $(".navbar-nav li").removeClass('navbar-active');
+          $(".contactMenu").addClass('navbar-active');
+          $(".div2").addClass('back2');
+          break;
+      }
     },
 
     addHidden: function(idMsg) {

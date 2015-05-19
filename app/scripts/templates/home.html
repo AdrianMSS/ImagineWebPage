@@ -1,11 +1,11 @@
 <div id="homeDiv" name="home">
 	<div class="div1">
-		<div class="row">
+		<div class="row fullHeight">
 			<div class="col-md-12 grid-md-12"> 
 		        <img class="homeImg" src="assets/img/home_img.png">
 			</div>
 		</div>
-		<div class="row shadow" id="metodologyDiv">
+		<div class="row shadow fullHeight" id="metodologyDiv">
 			<div class="col-md-12 grid-md-12 "> 
 				<h1><%= polyglot.t('titleMetodology') %></h1>
 				<br>
@@ -17,7 +17,7 @@
 				<div class="metodologyImg_1" id="metodologyImg"></div>
 			</div>
 		</div>
-		<div class="row" id="proyectsDiv">
+		<div class="row fullHeight" id="proyectsDiv">
 			<div class="col-md-12 grid-md-12"> 
 		        <h1><%= polyglot.t('titleProyects') %></h1>
 				<br>
@@ -27,7 +27,7 @@
 </div>
 <div class="div2">
   	<div id="hardwarethonDiv">
-		<div class="row">
+		<div class="row fullHeight">
 			<img src="assets/img/hardwarethonTitle_img.png">
 			<br><br>
 			<div class="col-md-6 grid-md-6" id="hardwarethon1">
@@ -40,13 +40,24 @@
 			</div>
 		</div>
 		<div id="cultureDiv">
-	  		<div class="row">
-				<div class="col-md-12 grid-md-12">
-					<h1><%= polyglot.t('titleCulture') %></h1>
-					<br> 
+	  		<div class="row fullHeight">
+				<h1><%= polyglot.t('titleCulture') %></h1>
+				<h2 id="cultureName"><%= polyglot.t('cultureText1') %></h2>
+				<div class="col-md-3 grid-md-3">
+					<button class="cultureArrow cultureArrow1">
+				        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+				     </button>
+				</div>
+				<div class="col-md-6 grid-md-6">
+					<div class="cultureImg_1" id="cultureImg"></div>
+				</div>
+				<div class="col-md-3 grid-md-3">
+					<button class="cultureArrow cultureArrow2">
+				        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span>
+				     </button>
 				</div>
 			</div>
-			<div class="shadow" id="teamDiv">
+			<div class="shadow fullHeight" id="teamDiv">
 				<h1><%= polyglot.t('titleTeam') %></h1>
 				<div class="row"> 
 					<div class="col-md-4 grid-md-4">
@@ -70,25 +81,27 @@
 				</div>
 			</div>
 		</div>
-		<div class="row" id="contactDiv">
-			<div class="row">	
-				<h3><%= polyglot.t('titleContact') %></h3>
-				<div class="col-lg-5">
-					<span class="icon icon-envelop"></span> <a href="#"> contact@imaginexyz.com</a> <br/>
-				</div><!-- col -->
-				
-				<div class="col-lg-6">
-						<form class="form-horizontal" role="form">
-							<div class="form-group">
-							    <input type="email" class="form-control" id="inputEmail" placeholder=<%= polyglot.t('mailContact') %>>
-							    <input type="text" class="form-control" id="inputName" placeholder=<%= polyglot.t('nameContact') %>>
-							    <input type="textfield" class="form-control" id="inputText" placeholder=<%= polyglot.t('textContact') %>>
-							    <button class="btn btn-success" id="inputButton"><%= polyglot.t('sendContact') %></button>
-							</div>
-							<label id="formSuccess" class= "hidden alert alert-success"><%= polyglot.t('msgContact') %></label>
-							<label id="formError" class= "hidden alert alert-danger"><%= polyglot.t('errorContact') %></label>
-					   </form><!-- form -->
-				</div><!-- col -->
+		<div id="contactDiv" class="fullHeight">
+			<div class="skewRow">
+				<div class="row">
+					<h3><%= polyglot.t('titleContact') %></h3>	
+					<div class="col-lg-5">
+						<span class="icon icon-envelop"></span> <a href="#"> contact@imaginexyz.com</a> <br/>
+					</div><!-- col -->
+					
+					<div class="col-lg-6">
+							<form class="form-horizontal" role="form">
+								<div class="form-group">
+								    <input type="email" class="form-control" id="inputEmail" placeholder=<%= polyglot.t('mailContact') %>>
+								    <input type="text" class="form-control" id="inputName" placeholder=<%= polyglot.t('nameContact') %>>
+								    <input type="textfield" class="form-control" id="inputText" placeholder=<%= polyglot.t('textContact') %>>
+								    <button class="btn btn-success" id="inputButton"><%= polyglot.t('sendContact') %></button>
+								</div>
+								<label id="formSuccess" class= "hidden alert alert-success"><%= polyglot.t('msgContact') %></label>
+								<label id="formError" class= "hidden alert alert-danger"><%= polyglot.t('errorContact') %></label>
+						   </form><!-- form -->
+					</div><!-- col -->
+				</div>
 			</div>
 	  	</div>
 	</div>

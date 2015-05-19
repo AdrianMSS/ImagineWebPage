@@ -9,6 +9,13 @@
  */
 
 
+@-webkit-keyframes bluePulse{
+    from{background-color:rgba(0, 125, 154, 0.6);-webkit-box-shadow:0 0 9px #333;}
+    50%{background-color:#2daebf;-webkit-box-shadow:0 0 18px #2daebf;}
+    to{background-color:rgba(0, 125, 154, 0.6);-webkit-box-shadow:0 0 9px #333;}
+}
+
+
 /* ==========================================================================
    Base Styles and Bootstrap Modifications
    ========================================================================== */
@@ -273,11 +280,13 @@ a:after {
 }
 .div1{
     height: 100%;
-    background-image: -webkit-linear-gradient( -60deg, #1A1A1A 40%, transparent 0%, transparent 60%, #1A1A1A 0%);
-    background-image: linear-gradient( -60deg, #1A1A1A 40%, transparent 0%, transparent 60%, #1A1A1A 0%);
+    background-image: -webkit-linear-gradient( -240deg, #1A1A1A 35%, transparent 0%, transparent 65%, #1A1A1A 0%);
+    background-image: -o-linear-gradient( -240deg, #1A1A1A 35%, transparent 0%, transparent 65%, #1A1A1A 0%);
+    background-image: -moz-linear-gradient( -240deg, #1A1A1A 35%, transparent 0%, transparent 65%, #1A1A1A 0%);
+    background-image: linear-gradient( -240deg, #1A1A1A 35%, transparent 0%, transparent 65%, #1A1A1A 0%);
 }
 .shadow{
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0.6);
 }
 .homeImg{
     width: 80%;
@@ -285,9 +294,9 @@ a:after {
 .div2{
     height: 100%;
     background: url(../img/hardwarethonBack_img.png);
-    transition: all 1s ease;
-    -webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease; 
+    transition: all 2s ease;
+    -webkit-transition: all 2s ease;
+    -moz-transition: all 2s ease; 
 
 }
 .div2.back2{
@@ -295,8 +304,10 @@ a:after {
 }
 #hardwarethonDiv{
     padding-bottom: 100px;
-    background-image: -webkit-linear-gradient( 60deg, #1A1A1A 40%, transparent 0%, transparent 60%, #1A1A1A 0%);
-    background-image: linear-gradient( 60deg, #1A1A1A 40%, transparent 0%, transparent 60%, #1A1A1A 0%);
+    background-image: -webkit-linear-gradient( 60deg, #1A1A1A 35%, transparent 0%, transparent 65%, #1A1A1A 0%);
+    background-image: -o-linear-gradient( 60deg, #1A1A1A 35%, transparent 0%, transparent 65%, #1A1A1A 0%);
+    background-image: -moz-linear-gradient( 60deg, #1A1A1A 35%, transparent 0%, transparent 65%, #1A1A1A 0%);
+    background-image: linear-gradient( 60deg, #1A1A1A 35%, transparent 0%, transparent 65%, #1A1A1A 0%);
 }
 .row{
     padding: 50px;
@@ -650,9 +661,9 @@ background-image: linear-gradient( -45deg, transparent 20%, #242424 0%, #242424 
     color: #A2BC35;
 }
 
-.navbar-inverse .navbar-nav > li > a:hover {
+/*.navbar-inverse .navbar-nav > li > a:hover {
     color: white;
-}
+}*/
 
 .navbar-inverse{
     background-color: rgba(0, 0, 0, 0.9);
@@ -699,38 +710,27 @@ p{
 /* Metodology Sprite */
 
 #metodologyImg {
+    padding-bottom: 29%;
+    background-size: 386%;
     height: 0;
     background-image: url(../img/metodology_img.png);
     transition: all 2s ease;
     -webkit-transition: all 2s ease;
-    -moz-transition: all 2s ease; 
+    -moz-transition: all 2s ease;
+    width: 50%;
+    display: inline-block;
 }
 .metodologyImg_1 {  
-    background-size: 100%;
-    width: 80%; 
-    padding-bottom: 20%;
-    display: inline-block;
+    background-position: 0% 100%;
 }
-.metodologyImg_2 { 
-    width: 25%;
-    padding-bottom: 40%;
-    background-position: 3% 100%;
-    background-size: 320%;
-    display: inline-block;
+.metodologyImg_2 {   
+    background-position: 33.5% 100%;
 }
 .metodologyImg_3 { 
-    width: 25%;
-    padding-bottom: 40%;
-    background-position: 50% 100%;
-    background-size: 320%;
-    display: inline-block;
+    background-position: 66.63% 100%;
 }
 .metodologyImg_4 { 
-    width: 25%;
-    padding-bottom: 20%;
-    background-position: 94% 50%;
-    background-size: 320%;
-    display: inline-block;
+    background-position: 99.93% 100%;
 }
 .metodologyButton{
     color: white;
@@ -743,6 +743,8 @@ p{
 /* Team Sprite */
 #teamDiv{
     text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
     padding-right: 20%;
     padding-left: 20%;
 }
@@ -779,6 +781,71 @@ p{
     background-position:  -474px -151px
 }
 
+/* Culture Sprite */
+#cultureName{
+    transition: all 2s ease;
+    -webkit-transition: all 2s ease;
+    -moz-transition: all 2s ease;
+}
+#cultureImg {
+    border-radius: 25%;
+    background-color: rgba(255,255,255,0.7);
+    padding-bottom: 69%;
+    background-size: 100%;
+    height: 0;
+    background-image: url(../img/culture_img.png);
+    transition: all 2s ease;
+    -webkit-transition: all 2s ease;
+    -moz-transition: all 2s ease;
+    width: 70%;
+    display: inline-block;
+}
+.cultureImg_1 {  
+    background-position: 0% 0%;
+}
+.cultureImg_2 {   
+    background-position: 0% 11.1%;
+}
+.cultureImg_3 { 
+    background-position: 0% 22.2%;
+}
+.cultureImg_4 { 
+    background-position: 0% 33.3%;
+}
+.cultureImg_5 {  
+    background-position: 0% 44.4%;
+}
+.cultureImg_6 {   
+    background-position: 0% 55.5%;
+}
+.cultureImg_7 { 
+    background-position: 0% 66.6%;
+}
+.cultureImg_8 { 
+    background-position: 0% 77.7%;
+}
+.cultureImg_9 {  
+    background-position: 0% 88.8%;
+}
+.cultureImg_0 {   
+    background-position: 0% 100%;
+}
+.cultureArrow {
+    -webkit-animation-name: bluePulse;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    border-radius: 25%;
+    margin-top: 50%;
+    font-size: xx-large;
+    padding-top: 5px;
+}
+.cultureArrow1 {
+  float: right;
+}
+.cultureArrow2 {
+  float: left;
+}
+
 .navbar-active{
   font-weight: bold;
   color: white;
@@ -787,11 +854,20 @@ p{
     background-image: url(../img/navbarLogo2_img.png);
     background-repeat: no-repeat;
 }
+.homeMenu a{
+  color: transparent !important;
+}
+.homeMenu a:hover{
+  color: transparent !important;
+}
 .in .homeMenu{
     background-image: none;
 }
 .in a{
-    color: white;
+    color: white !important;
+}
+.in a:hover{
+    color: white !important;
 }
 .languageBar{
     position: fixed;
@@ -830,6 +906,9 @@ p{
     margin-left: -10px;
 }
 #contactDiv{
+    padding-top: 50px;
+}
+.skewRow{
   -webkit-transform: skew(-40deg);
   -moz-transform: skew(-40deg);
   -o-transform: skew(-40deg);
@@ -841,21 +920,23 @@ p{
   margin-right: auto;
   margin-left: auto;
   background-color: black;
-  height: 100%;
 }
-#contactDiv .row{
+.skewRow .row{
   -webkit-transform: skew(40deg);
   -moz-transform: skew(20deg);
   -o-transform: skew(20deg);
  }
+.fullHeight{
+    height:100vh;
+}
 
 @media (max-width: 1000px) {
-    #contactDiv{
+    .skewRow{
       -webkit-transform: skew(0deg);
       -moz-transform: skew(0deg);
       -o-transform: skew(0deg);
     }
-    #contactDiv .row{
+    .skewRow .row{
       -webkit-transform: skew(0deg);
       -moz-transform: skew(0deg);
       -o-transform: skew(0deg);
@@ -865,13 +946,38 @@ p{
     }
 }
 
-@media (max-device-width: 480px) and (orientation: portrait) {
-    #contactDiv{
+
+@media (max-width: 892px) {
+    .cultureArrow2 {
+        float: none;
+    }
+    .cultureArrow1 {
+        float: none;
+    }
+    .cultureArrow {
+        margin-top: 10px;
+    }
+}
+
+@media (max-device-width: 892px){
+    .cultureArrow2 {
+        float: none;
+    }
+    .cultureArrow1 {
+        float: none;
+    }
+    .cultureArrow {
+        margin-top: 10px;
+    }
+}
+
+@media (max-device-width: 480px) {
+    .skewRow{
       -webkit-transform: skew(0deg);
       -moz-transform: skew(0deg);
       -o-transform: skew(0deg);
     }
-    #contactDiv .row{
+    .skewRow .row{
       -webkit-transform: skew(0deg);
       -moz-transform: skew(0deg);
       -o-transform: skew(0deg);
