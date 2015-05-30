@@ -189,8 +189,7 @@ define([
 
     culturePrev: function(){
         this.cultureCount--;
-        var cultureClass = 'cultureImg_' + (Math.abs(this.cultureCount%10)),
-          cultureText = '<%= polyglot.t("cultureText'+(Math.abs(this.cultureCount%10))+'") %>';
+        var cultureClass = 'cultureImg_' + (Math.abs(this.cultureCount%10));
         $('#cultureImg').removeClass();
         $('#cultureImg').addClass(cultureClass);
         $('#cultureName').html(_.template(cultureText));
@@ -198,8 +197,7 @@ define([
 
     cultureNext: function(){
         this.cultureCount++;
-        var cultureClass = 'cultureImg_' + (Math.abs(this.cultureCount%10)),
-          cultureText = '<%= polyglot.t("cultureText'+(Math.abs(this.cultureCount%10))+'") %>';
+        var cultureClass = 'cultureImg_' + (Math.abs(this.cultureCount%10));
         $('#cultureImg').removeClass();
         $('#cultureImg').addClass(cultureClass);
         $('#cultureName').html(_.template(cultureText));

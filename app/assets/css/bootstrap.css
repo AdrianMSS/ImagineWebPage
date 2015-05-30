@@ -5757,7 +5757,7 @@ button.close {
 }
 .modal-content {
   position: relative;
-  background-color: #fff;
+  background-color: transparent;
   -webkit-background-clip: padding-box;
           background-clip: padding-box;
   border: 1px solid #999;
@@ -5822,9 +5822,9 @@ button.close {
   height: 50px;
   overflow: scroll;
 }
-@media (min-width: 1000px) {
+@media (min-width: 1200px) {
   .modal-dialog {
-    width: 600px;
+    width: 1200px;
     margin: 30px auto;
   }
   .modal-content {
