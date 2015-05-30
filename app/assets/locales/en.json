@@ -8,8 +8,8 @@
   'titleMetodology': 'Metodology',
   'titleProyects': 'Proyects',
   'titleCulture': 'XYZ Culture',
-  'titleTeam': 'The Crew',
-  'titleContact': 'Contact Us',
+  'titleTeam': 'The Imagine XYZ Crew',
+  'titleContact': 'The Imagine XYZ Contact',
   'mailContact': 'Mail',
   'nameContact': 'Name',
   'textContact': 'Text',
@@ -17,15 +17,5 @@
   'msgContact': 'Message Sent',
   'errorContact': 'Please Try Again',
   'footer': 'Created By',
-  'hardwarethonImg': 'src="/assets/img/hardwarethonEng_img.png"',
-  'cultureText1': 'Ambiente de Trabajo',
-  'cultureText2': 'Cultura Abierta',
-  'cultureText3': 'Diferenciación',
-  'cultureText4': 'Información',
-  'cultureText5': 'I+D+i',
-  'cultureText6': 'Retos',
-  'cultureText7': 'Humildad',
-  'cultureText8': 'Responsabilidad Social',
-  'cultureText9': 'Enfoque en el Cliente',
-  'cultureText0': 'Versatilidad'
+  'hardwarethonImg': 'src="/assets/img/hardwarethonEng_img.png"'
 }
