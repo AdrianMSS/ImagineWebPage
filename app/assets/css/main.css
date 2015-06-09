@@ -769,6 +769,8 @@ p{
     background-color: #1A1A1A;
     height: 356px;
     text-align: left;
+    -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
 }
 .skewRow2 div{
     -webkit-transform: skew(30deg);
@@ -828,7 +830,7 @@ p{
     background-position:  49.8% 95%;
 }
 #juancarlosSpot2{
-    background-position:  98% 95%;
+    background-position:  99.5% 95%;
 }
 
 /* Culture Sprite */
