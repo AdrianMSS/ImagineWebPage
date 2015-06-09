@@ -23,7 +23,6 @@ define([
           'metodology': 'metodology',
           'proyects': 'proyects',
           'hardwarethon': 'hardwarethon',
-          'culture': 'culture',
           'team': 'team',
           'contact': 'contact',
           '*path':  'home'
@@ -105,16 +104,12 @@ define([
           HomeView.movePage(6);
       },
 
-      culture: function() {
-          HomeView.movePage(7);
-      },
-
       team: function() {
-          HomeView.movePage(8);
+          HomeView.movePage(7);
       },
       
       contact: function() {
-          HomeView.movePage(9);
+          HomeView.movePage(8);
       }
   });
   return Router;

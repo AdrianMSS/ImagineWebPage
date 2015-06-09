@@ -9,12 +9,8 @@
 			<div class="col-md-12 grid-md-12 "> 
 				<h1><%= polyglot.t('titleMetodology') %></h1>
 				<br>
-		        <a class="metodologyButton imagineButton">Imagine</a>
-		        <a class="metodologyButton xButton">X</a>
-		        <a class="metodologyButton yButton">Y</a>
-		        <a class="metodologyButton zButton">Z</a>
 				<br>
-				<div class="metodologyImg_1" id="metodologyImg"></div>
+				<div <%= polyglot.t('imgMetodology') %> id="metodologyImg"></div>
 			</div>
 		</div>
 		<div class="row fullHeight" id="proyectsDiv">
@@ -39,44 +35,26 @@
 				<a href="https://www.facebook.com/pages/Hardwarethon/1500581303545910" target="_blank"><img class="hardwarethon-image4" src="/assets/img/hwFb_img.png" alt=""></a>
 			</div>
 		</div>
-		<div id="cultureDiv">
-	  		<div class="row fullHeight">
-				<h1><%= polyglot.t('titleCulture') %></h1>
-				<div class="col-md-3 grid-md-3">
-					<button class="cultureArrow cultureArrow1">
-				        <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
-				     </button>
+		<div class="shadow fullHeight" id="teamDiv">
+			<h1><%= polyglot.t('titleTeam') %></h1>
+			<div class="row"> 
+				<div class="col-md-4 grid-md-4">
+					<div id="javierSpot" class="memberDiv" data-toggle="modal" data-target="#javierModal"></div>
 				</div>
-				<div class="col-md-6 grid-md-6">
-					<div class="cultureImg_1" id="cultureImg"></div>
+				<div class="col-md-4 grid-md-4">
+					<div id="bryanSpot" class="memberDiv" data-toggle="modal" data-target="#bryanModal"></div>
 				</div>
-				<div class="col-md-3 grid-md-3">
-					<button class="cultureArrow cultureArrow2">
-				        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span>
-				     </button>
+				<div class="col-md-4 grid-md-4">
+					<div id="hugoSpot" class="memberDiv" data-toggle="modal" data-target="#hugoModal"></div>
 				</div>
-			</div>
-			<div class="shadow fullHeight" id="teamDiv">
-				<h1><%= polyglot.t('titleTeam') %></h1>
-				<div class="row"> 
-					<div class="col-md-4 grid-md-4">
-						<div id="javierSpot" class="memberDiv" data-toggle="modal" data-target="#javierModal"></div>
-					</div>
-					<div class="col-md-4 grid-md-4">
-						<div id="bryanSpot" class="memberDiv" data-toggle="modal" data-target="#bryanModal"></div>
-					</div>
-					<div class="col-md-4 grid-md-4">
-						<div id="hugoSpot" class="memberDiv" data-toggle="modal" data-target="#hugoModal"></div>
-					</div>
-					<div class="col-md-4 grid-md-4">
-						<div id="ernerstoSpot" class="memberDiv" data-toggle="modal" data-target="#ernestoModal"></div>
-					</div>
-					<div class="col-md-4 grid-md-4">
-						<div id="adrianSpot" class="memberDiv" data-toggle="modal" data-target="#adrianModal"></div>
-					</div>
-					<div class="col-md-4 grid-md-4">
-						<div id="juancarlosSpot" class="memberDiv" data-toggle="modal" data-target="#juancarlosModal"></div>
-					</div>
+				<div class="col-md-4 grid-md-4">
+					<div id="ernerstoSpot" class="memberDiv" data-toggle="modal" data-target="#ernestoModal"></div>
+				</div>
+				<div class="col-md-4 grid-md-4">
+					<div id="adrianSpot" class="memberDiv" data-toggle="modal" data-target="#adrianModal"></div>
+				</div>
+				<div class="col-md-4 grid-md-4">
+					<div id="juancarlosSpot" class="memberDiv" data-toggle="modal" data-target="#juancarlosModal"></div>
 				</div>
 			</div>
 		</div>
@@ -106,7 +84,7 @@
 	</div>
 </div>
 <footer class="footer">
-	<h4><%= polyglot.t('footer') %> <a href="http://imaginexyz.com" target="_blank">Imagine X</a> - Copyright 2015</h4>
+	<h4><%= polyglot.t('footer') %> <a href="http://imaginexyz.com" target="_blank">Imagine XYZ</a> - Copyright 2015</h4>
 </footer>
 
 <!-- Modal -->
@@ -121,8 +99,7 @@
           	<button type="button" class="close" data-dismiss="modal" aria-hidden="true" id="closeModal">&times;</button> 
           	<div>  
           		<h1>JAVIER CARVAJAL</h1>
-          		<p>Ingeniero Electrónico, apasionado por los sistemas embebidos y la eficiencia energética. Disfruta de los festivales de música psicodélica y su ejercicio favorito es la natación.</p>
-          		<p>Por favor recibamos con un aplauso caluroso a nuestro soltero número uno.</p>      
+          		<p><%= polyglot.t('javierText') %></p>     
           	</div> 
           </div> 
         </div>
@@ -143,8 +120,7 @@
           	<button type="button" class="close" data-dismiss="modal" aria-hidden="true" id="closeModal">&times;</button> 
           	<div>  
           		<h1>BRYAN NAVARRO</h1>
-          		<p>Administrador de Tecnologías de Información. Ambicioso, aventurero y determinado. Le apasionan los deportes especialmente los peligrosos y extremos.</p>
-          		<p>Démosle una efusiva bienvenida a nuestro soltero número dos.</p>      
+              <p><%= polyglot.t('bryanText') %></p>   
           	</div> 
           </div> 
         </div>
@@ -165,8 +141,7 @@
           	<button type="button" class="close" data-dismiss="modal" aria-hidden="true" id="closeModal">&times;</button> 
           	<div>  
           		<h1>HUGO SÁNCHEZ</h1>
-          		<p>Ingeniero Mecatrónico, enfocado en sistemas de precisión y energéticos. Entre sus hobbies se encuentran la poesía, el baile y la literatura.</p>
-          		<p>Un aplauso enérgico para nuestro soltero número tres.</p>      
+              <p><%= polyglot.t('hugoText') %></p> 
           	</div> 
           </div> 
         </div>
@@ -187,8 +162,7 @@
           	<button type="button" class="close" data-dismiss="modal" aria-hidden="true" id="closeModal">&times;</button> 
           	<div>  
           		<h1>ERNESTO OLIVARES</h1>
-          		<p>Diseñador Gráfico. Creativo, detallista y un excelente chef. Sus aficiones son el dibujo, la cocina y el animé.</p>
-          		<p>Démosle una calurosa bienvenida a nuestro soltero número cuatro.</p>      
+              <p><%= polyglot.t('ernestoText') %></p>    
           	</div> 
           </div> 
         </div>
@@ -209,8 +183,7 @@
           	<button type="button" class="close" data-dismiss="modal" aria-hidden="true" id="closeModal">&times;</button> 
           	<div>  
           		<h1>ADRIÁN SÁNCHEZ</h1>
-          		<p>Ingeniero en Computación. Se destaca por su humor, su paciencia y su inteligencia. Entre sus pasiones se encuentran la música, los videojuegos y los deportes.</p>
-          		<p>Recibamos con una ovación a nuestro soltero número cinco.</p>      
+              <p><%= polyglot.t('adrianText') %></p>  
           	</div> 
           </div> 
         </div>
@@ -231,12 +204,10 @@
           	<button type="button" class="close" data-dismiss="modal" aria-hidden="true" id="closeModal">&times;</button> 
           	<div>  
           		<h1>JUAN CARLOS MARTÍ</h1>
-          		<p>Diseñodor de Productos. Su innovación, creatividad y liderazgo valen oro. Le gusta pasar sus tardes libres jugando beisbol o viendo películas.</p>
-          		<p>Efusívamente brindémosle una recepción a nuestro soltero número seis.</p>      
+              <p><%= polyglot.t('juanText') %></p>    
           	</div> 
           </div> 
         </div>
       </div>
     </div>
 </div>
-

@@ -275,7 +275,7 @@ a:after {
 
 #homeDiv {
     padding-top: 50px;
-	background-image: url(../img/giphy.gif);
+	background:rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 .div1{
@@ -300,14 +300,14 @@ a:after {
 
 }
 .div2.back2{
-    background: url(../img/giphy.gif);
+    background:rgba(0, 0, 0, 0.1);
 }
 #hardwarethonDiv{
     padding-bottom: 100px;
-    background-image: -webkit-linear-gradient( 60deg, #1A1A1A 35%, transparent 0%, transparent 65%, #1A1A1A 0%);
-    background-image: -o-linear-gradient( 60deg, #1A1A1A 35%, transparent 0%, transparent 65%, #1A1A1A 0%);
-    background-image: -moz-linear-gradient( 60deg, #1A1A1A 35%, transparent 0%, transparent 65%, #1A1A1A 0%);
-    background-image: linear-gradient( 60deg, #1A1A1A 35%, transparent 0%, transparent 65%, #1A1A1A 0%);
+    background-image: -webkit-linear-gradient( 60deg, #1A1A1A 35%, transparent 0%, transparent 66%, #1A1A1A 0%);
+    background-image: -o-linear-gradient( 60deg, #1A1A1A 35%, transparent 0%, transparent 66%, #1A1A1A 0%);
+    background-image: -moz-linear-gradient( 60deg, #1A1A1A 35%, transparent 0%, transparent 66%, #1A1A1A 0%);
+    background-image: linear-gradient( 60deg, #1A1A1A 35%, transparent 0%, transparent 66%, #1A1A1A 0%);
 }
 .row{
     padding: 50px;
@@ -710,35 +710,20 @@ p{
 /* Metodology Sprite */
 
 #metodologyImg {
-    padding-bottom: 29%;
-    background-size: 386%;
-    height: 0;
-    background-image: url(../img/metodology_img.png);
     transition: all 2s ease;
     -webkit-transition: all 2s ease;
     -moz-transition: all 2s ease;
-    width: 50%;
-    display: inline-block;
+    width: 90%;
+    margin: auto;
+    background-size: 100%;
 }
-.metodologyImg_1 {  
-    background-position: 0% 100%;
+.metodologyImg_EN{
+    background-image: url(../img/metodology_hor.png);
+    padding-bottom: 13%;
 }
-.metodologyImg_2 {   
-    background-position: 33.5% 100%;
-}
-.metodologyImg_3 { 
-    background-position: 66.63% 100%;
-}
-.metodologyImg_4 { 
-    background-position: 99.93% 100%;
-}
-.metodologyButton{
-    color: white;
-    cursor: pointer;
-    font-size: x-large;
-}
-.metodologyButton.active{
-  font-weight: bold;
+.metodologyImg_ES{
+    background-image: url(../img/metodology_hor.png);
+    padding-bottom: 13%;
 }
 /* Team Sprite */
 #teamDiv{
@@ -943,7 +928,6 @@ p{
 }
 .scrollFreeze{
     height: 100%;
-    overflow: hidden;
 }
 .footer{
     background-color: black;
@@ -1037,18 +1021,45 @@ p{
 }
 
 @media (max-width: 945px) {
+    .fullHeight{
+        height: 100%;
+    }
+    
+    .metodologyImg_ES{
+        background-image: url(../img/metodology_ver.png);
+        padding-bottom: 165%;
+    }
+    .metodologyImg_EN{
+        background-image: url(../img/metodology_ver.png);
+        padding-bottom: 165%;
+    }
+    
     .skewRow2{
         margin-left: 50px;
     }
 }
 
 @media (max-device-width: 945px){
+    .fullHeight{
+        height: 100%;
+    }
+
+    .metodologyImg_ES{
+        background-image: url(../img/metodology_ver.png);
+        padding-bottom: 165%;
+    }
+    .metodologyImg_EN{
+        background-image: url(../img/metodology_ver.png);
+        padding-bottom: 165%;
+    }
+    
     .skewRow2{
         margin-left: 50px;
     }
 }
 
 @media (max-width: 700px) {
+
     .skewRow2{
         margin-left: 0px;
         -webkit-transform: skew(0deg);
@@ -1135,3 +1146,14 @@ p{
     }
 }
 
+body { 
+  background-color: #003366; 
+  padding: 0; 
+  margin: 0; 
+}
+#world{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
