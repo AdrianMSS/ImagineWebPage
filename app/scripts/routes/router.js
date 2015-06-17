@@ -97,19 +97,19 @@ define([
       },
       
       proyects: function() {
-          HomeView.movePage(5);
+          HomeView.movePage(2);
       },
       
       hardwarethon: function() {
-          HomeView.movePage(6);
+          HomeView.movePage(3);
       },
 
       team: function() {
-          HomeView.movePage(7);
+          HomeView.movePage(4);
       },
       
       contact: function() {
-          HomeView.movePage(8);
+          HomeView.movePage(5);
       }
   });
   return Router;

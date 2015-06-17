@@ -53,7 +53,7 @@ function createParticles() {
             shift: { x: mouseX, y: mouseY },
             speed: 0.01+Math.random()*0.04,
             targetSize: 1,
-            fillColor: '#' + (Math.random() * 0x404040 + 0xaaaaaa | 0).toString(16),
+            fillColor: '#000A18',
             orbit: RADIUS*.5 + (RADIUS * .5 * Math.random())
         };
         
@@ -103,15 +103,15 @@ function windowResizeHandler() {
 function loop() {
     
     if( mouseIsDown ) {
-        RADIUS_SCALE += ( RADIUS_SCALE_MAX - RADIUS_SCALE ) * (0.02);
+        RADIUS_SCALE += ( RADIUS_SCALE_MAX - RADIUS_SCALE ) * (0.05);
     }
     else {
-        RADIUS_SCALE -= ( RADIUS_SCALE - RADIUS_SCALE_MIN ) * (0.02);
+        RADIUS_SCALE -= ( RADIUS_SCALE - RADIUS_SCALE_MIN ) * (0.05);
     }
     
     RADIUS_SCALE = Math.min( RADIUS_SCALE, RADIUS_SCALE_MAX );
     
-    context.fillStyle = 'rgba(0,0,0,0.05)';
+    context.fillStyle = 'rgba(0,51,102,0.05)';
          context.fillRect(0, 0, context.canvas.width, context.canvas.height);
     
     for (i = 0, len = particles.length; i < len; i++) {
@@ -153,4 +153,6 @@ function loop() {
     }
 }
 
-window.onload = init;
+if (window.orientation===undefined){
+    window.onload = init;   
+}

@@ -91,55 +91,32 @@ define([
           break;
         case 1:
           $("html, body").animate({ scrollTop: $("#metodologyDiv").offset().top }, 'slow');
-          $( ".imagineButton" ).trigger( "click" );
           this.scrollMov = $("#metodologyDiv").offset().top;
           $(".navbar-nav li").removeClass('navbar-active');
           $(".metodologyMenu").addClass('navbar-active');
           break;
         case 2:
-          $("html, body").animate({ scrollTop: $("#metodologyDiv").offset().top }, 'slow');
-          $( ".xButton" ).trigger( "click" );
-          this.scrollMov = $("#metodologyDiv").offset().top;
-          $(".navbar-nav li").removeClass('navbar-active');
-          $(".metodologyMenu").addClass('navbar-active');
-          break;
-        case 3:
-          $("html, body").animate({ scrollTop: $("#metodologyDiv").offset().top }, 'slow');
-          $( ".yButton" ).trigger( "click" );
-          this.scrollMov = $("#metodologyDiv").offset().top;
-          $(".navbar-nav li").removeClass('navbar-active');
-          $(".metodologyMenu").addClass('navbar-active');
-          break;
-        case 4:
-          $("html, body").animate({ scrollTop: $("#metodologyDiv").offset().top }, 'slow');
-          $( ".zButton" ).trigger( "click" );
-          this.scrollMov = $("#metodologyDiv").offset().top;
-          $(".navbar-nav li").removeClass('navbar-active');
-          $(".metodologyMenu").addClass('navbar-active');  
-          break;
-        case 5:
           $("html, body").animate({ scrollTop: $("#proyectsDiv").offset().top }, 'slow');
           this.scrollMov = $("#proyectsDiv").offset().top;
           $(".navbar-nav li").removeClass('navbar-active');
           $(".proyectsMenu").addClass('navbar-active');
           break;
-        case 6:
+        case 3:
           $("html, body").animate({ scrollTop: $("#hardwarethonDiv").offset().top }, 'slow');
           this.scrollMov = $("#hardwarethonDiv").offset().top;
           $(".navbar-nav li").removeClass('navbar-active');
           $(".hardwarethonMenu").addClass('navbar-active');
           break;
-        case 7:
+        case 4:
           $("html, body").animate({ scrollTop: $("#teamDiv").offset().top }, 'slow');
           this.scrollMov = $("#teamDiv").offset().top;
           $(".navbar-nav li").removeClass('navbar-active');
           $(".teamMenu").addClass('navbar-active');
           break;
-        case 8:
+        case 5:
           $("html, body").animate({ scrollTop: $("#contactDiv").offset().top }, 'slow');
           this.scrollMov = $("#contactDiv").offset().top;
           $(".navbar-nav li").removeClass('navbar-active');
-          
           break;
       }
     },
@@ -147,9 +124,12 @@ define([
     windowScroll: function(e){
       if(e.currentTarget.scrollY<=$("#teamDiv").offset().top-50){
         $(".div2").removeClass('back2');
+        $("#world").removeClass('hidden');
       }
       else{
         $(".div2").addClass('back2');
+        $("#world").addClass('hidden');
+        //window['myVar'] = true;
       }
     },
 
