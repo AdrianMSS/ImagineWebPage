@@ -19,10 +19,10 @@
   'errorContact': 'Please Try Again',
   'footer': 'Created By',
   'hardwarethonImg': 'src="/assets/img/hardwarethonEng_img.png"',
-  'javierText': 'Ingeniería Electrónica, especialista en energía, sistemas embedidos y de control. Apasionado por el hiking, el camping y la fórmula uno. Sueña con volar al espacio.',
-  'bryanText': 'Sistemas de Información, especialista en desarrollo de negocios. Apasionado por deportes extremos, peligrosos, la música y la cocina. Sueña con cambiar el mundo.',
-  'hugoText': 'Ingeniería en Mecatrónica, especialista en sistemas de manufactura, diseño mecánico y energía. Apasionado por la literatura y el Club Sport Cartagines. Sueña con construir su propio traje de Ironman.',
-  'ernestoText': 'Ingeniería en Diseño Industrial, especialista en diseño de productos y visualización de información. Apasionado por la ilustración y la cocina. Sueña con tener su propio restaurante',
-  'adrianText': 'Ingeniería en Computación, especialista en servidores asincrónicos, bases de datos no relacionales y Big Data. Apasionado por video juegos, música y deportes. Sueña con conocer el mundo.',
-  'juanText': 'Ingeniería en Diseño Industrial, especialista en innovación, emprendimiento y gestión de proyectos. Apasionado por proyectos disruptivos y experiencias nuevas. Sueña con lo inexistente.'
+  'javierText': 'Electronics Engineer, specialist in energy, embedded and control systems. Passionate about hiking, camping and the F1. Dreams about flying to the space.',
+  'bryanText': 'Information Systems, specialist in business development. Passionate about extreme and dangerous sports, music and the food. Dreams about changing the world.',
+  'hugoText': 'Mechatronics Engineer, specialized in manufacture, design, mechanics and energy systems. Passionate for the literature and the "Club Sport Cartagines". Dreams about building his own Ironman suit.',
+  'ernestoText': 'Industrial Design Engineer, specialist in product design and data visualization. Passionate for drawing and the food. Dreams about having his own restaurant.',
+  'adrianText': 'Software Engineer, specialist in asynchronous servers and non relational databases. Passionate for video games, music and sports. Dreams about traveling across the world.',
+  'juanText': 'Industrial Design Engineer, specialist in innovation, entrepreneurship and project management. Passionate for disruptive projects and new experiences. Dreams with the nonexistent.'
 }

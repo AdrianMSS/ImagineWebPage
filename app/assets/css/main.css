@@ -739,64 +739,61 @@ p{
     margin-left: auto;
     margin-right: auto;
     cursor: pointer;
-    background: url(../img/team_img.png) no-repeat;
     transition: all 1s ease;
     -webkit-transition: all 1s ease;
     -moz-transition: all 1s ease; 
-}
-.memberDiv:hover{
-    background: url(../img/team2_img.png) no-repeat;
 }
 
 .memberDiv2{
-    width: 600px;
-    height: 356px;
+    width: 1000px;
+    height: 376px;
     margin-left: auto;
     margin-right: auto;
-    background: url(../img/team2_img.png) no-repeat;
     transition: all 1s ease;
     -webkit-transition: all 1s ease;
     -moz-transition: all 1s ease; 
-    background-size: 300%;
 }
 
 .skewRow2{
-    margin-left: -105px;
     -webkit-transform: skew(-30deg);
     -moz-transform: skew(-30deg);
     -o-transform: skew(-30deg);
-    width: 400px;
-    background-color: #1A1A1A;
-    height: 356px;
-    text-align: left;
-    -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    background-color: #E6E6E6;
+    position: absolute;
+    left: 10%;
+    bottom: 10px;
+    width: 69%;
 }
-.skewRow2 div{
+.skewRow2 h2{
+    margin: 0px;
     -webkit-transform: skew(30deg);
     -moz-transform: skew(30deg);
     -o-transform: skew(30deg);
-}
-.skewRow2 h1{
     color: #0066CC;
     font-weight: bold;
-    margin-left: 50px;
-    margin-top: 50px;
-    text-align: center;
+    margin-top: 10px;
+    margin-left: 20px;
+    text-align: left;
 }
 .skewRow2 p{
-    color: #79BBD0;
+    -webkit-transform: skew(30deg);
+    -moz-transform: skew(30deg);
+    -o-transform: skew(30deg);
+    color: #1A1A1A;
     margin: 30px;
     margin-top: 0px;
     margin-bottom: 0px;
+    font-weight: bold;
+    text-align: left;
+    font-size: medium;
 }
-.skewRow2 button{
+.close{
+    position: absolute;
+    top: 10px;
+    right: 50px;
     border-radius: 100%;
-    -webkit-transform: skew(30deg);
-    -moz-transform: skew(30deg);
-    -o-transform: skew(30deg);
     opacity: 1;
-    background-color: #003366;
+    background-color: #003366 !important;
     width: 30px;
     height: 30px;
     color: white;
@@ -805,32 +802,63 @@ p{
 }
 
 #javierSpot{
-    background-position: 0% 0%;
+    background: url(../img/javier_1.png) no-repeat;
 }
 #bryanSpot{
-    background-position: 50% 0%;
+    background: url(../img/bryan_1.png) no-repeat;
 }
 #hugoSpot{
-    background-position: 100% 0%;
+    background: url(../img/hugo_1.png) no-repeat;
 }
-#ernerstoSpot{
-    background-position:  0% 101%;
+#ernestoSpot{
+    background: url(../img/ernesto_1.png) no-repeat;
 }
 #adrianSpot{
-    background-position:  50% 101%;
+    background: url(../img/adrian_1.png) no-repeat;
 }
-#juancarlosSpot{
-    background-position:  100% 101%;
+#juanSpot{
+    background: url(../img/juan_1.png) no-repeat;
 }
 
-#ernerstoSpot2{
-    background-position:  -1% 95%;
+#javierSpot:hover{
+    background: url(../img/javier_2.png) no-repeat;
+}
+#bryanSpot:hover{
+    background: url(../img/bryan_2.png) no-repeat;
+}
+#hugoSpot:hover{
+    background: url(../img/hugo_2.png) no-repeat;
+}
+#ernestoSpot:hover{
+    background: url(../img/ernesto_2.png) no-repeat;
+}
+#adrianSpot:hover{
+    background: url(../img/adrian_2.png) no-repeat;
+}
+#juanSpot:hover{
+    background: url(../img/juan_2.png) no-repeat;
+}
+
+.modalImg{
+    width: 100%;
+}
+#javierSpot2{
+    background: url(../img/javier_3.png) no-repeat;
+}
+#bryanSpo2{
+    background: url(../img/bryan_3.png) no-repeat;
+}
+#hugoSpot2{
+    background: url(../img/hugo_3.png) no-repeat;
+}
+#ernestoSpot2{
+    background: url(../img/ernesto_3.png) no-repeat;
 }
 #adrianSpot2{
-    background-position:  49.8% 95%;
+    background: url(../img/adrian_3.png) no-repeat;
 }
-#juancarlosSpot2{
-    background-position:  99.5% 95%;
+#juanSpot2{
+    background: url(../img/juan_3.png) no-repeat;
 }
 
 /* Culture Sprite */
@@ -1035,10 +1063,6 @@ p{
         background-image: url(../img/metodology_ver.png);
         padding-bottom: 165%;
     }
-    
-    .skewRow2{
-        margin-left: 50px;
-    }
 }
 
 @media (max-device-width: 945px){
@@ -1054,84 +1078,27 @@ p{
         background-image: url(../img/metodology_ver.png);
         padding-bottom: 165%;
     }
-    
+}
+
+@media (max-width: 1000px) {
+
     .skewRow2{
-        margin-left: 50px;
+        position: relative;
+        left: 0;
+        bottom: 0;
+        width: 90%;
     }
 }
 
-@media (max-width: 700px) {
-
+@media (max-device-width: 1000px){
     .skewRow2{
-        margin-left: 0px;
-        -webkit-transform: skew(0deg);
-        -moz-transform: skew(0deg);
-        -o-transform: skew(0deg);
-        width: 100%;
-        height: 100%;
-    }
-
-    .skewRow2 div{
-        -webkit-transform: skew(0deg);
-        -moz-transform: skew(0deg);
-        -o-transform: skew(0deg);
-    }
-    .skewRow2 h1{
-        margin-left: 0px;
-        margin-top: 0px;
-    }
-    .skewRow2 p{
-        margin: 0px;
-    }
-    .skewRow2 button{
-        -webkit-transform: skew(0deg);
-        -moz-transform: skew(0deg);
-        -o-transform: skew(30deg);
-    }
-
-    .memberDiv2{
-        width: 0px;
-        height: 0px;
-        padding-right: 100%;
-        padding-bottom: 66%;
+        position: relative;
+        left: 0;
+        bottom: 0;
+        width: 90%;
     }
 }
 
-@media (max-device-width: 700px){
-    .skewRow2{
-        margin-left: 0px;
-        -webkit-transform: skew(0deg);
-        -moz-transform: skew(0deg);
-        -o-transform: skew(0deg);
-        width: 100%;
-        height: 100%;
-    }
-
-    .skewRow2 div{
-        -webkit-transform: skew(0deg);
-        -moz-transform: skew(0deg);
-        -o-transform: skew(0deg);
-    }
-    .skewRow2 h1{
-        margin-left: 0px;
-        margin-top: 0px;
-    }
-    .skewRow2 p{
-        margin: 0px;
-    }
-    .skewRow2 button{
-        -webkit-transform: skew(0deg);
-        -moz-transform: skew(0deg);
-        -o-transform: skew(30deg);
-    }
-
-    .memberDiv2{
-        width: 0px;
-        height: 0px;
-        padding-right: 100%;
-        padding-bottom: 66%;
-    }
-}
 @media (max-device-width: 480px) {
     .skewRow{
       -webkit-transform: skew(0deg);
